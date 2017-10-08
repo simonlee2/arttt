@@ -10,6 +10,13 @@ import UIKit
 import SceneKit
 import ARKit
 
+struct CollisionCategory: OptionSet {
+    let rawValue: Int
+    
+    static let bottom = CollisionCategory(rawValue: 1 << 0)
+    static let cube = CollisionCategory(rawValue: 1 << 1)
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
@@ -43,8 +50,8 @@ class ViewController: UIViewController {
         let bottomNode = SCNNode(geometry: bottomPlane)
         bottomNode.position = SCNVector3(x: 0, y: -10, z:0)
         bottomNode.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
-        bottomNode.physicsBody?.categoryBitMask = 1 << 0
-        bottomNode.physicsBody?.contactTestBitMask = 1 << 1
+        bottomNode.physicsBody?.categoryBitMask = CollisionCategory.cube.rawValue
+        bottomNode.physicsBody?.contactTestBitMask = CollisionCategory.bottom.rawValue
         
         sceneView.scene.rootNode.addChildNode(bottomNode)
         sceneView.scene.physicsWorld.contactDelegate = self

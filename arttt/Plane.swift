@@ -18,9 +18,12 @@ class Plane: SCNNode {
         let length = CGFloat(anchor.extent.z)
         let box = SCNBox(width: width, height: height, length: length, chamferRadius: 0)
         
+        let planeMaterial = SCNMaterial()
+        planeMaterial.diffuse.contents = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.25)
+        box.firstMaterial = planeMaterial
+        
         let planeNode = SCNNode(geometry: box)
         planeNode.position = SCNVector3(0, -Float(height)/2, 0)
-        planeNode.opacity = 0.25
         planeNode.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: box, options: nil))
         
         self.addChildNode(planeNode)
