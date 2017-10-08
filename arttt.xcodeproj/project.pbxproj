@@ -17,6 +17,7 @@
 		F4D31C981F84DB6A004437FD /* GridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D31C971F84DB6A004437FD /* GridModel.swift */; };
 		F4D31C9A1F84E2CD004437FD /* PrimitiveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D31C991F84E2CD004437FD /* PrimitiveScene.swift */; };
 		F4D31C9C1F85E7A4004437FD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D31C9B1F85E7A4004437FD /* Grid.swift */; };
+		F4D31C9E1F8A594D004437FD /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D31C9D1F8A594D004437FD /* Plane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F4D31C971F84DB6A004437FD /* GridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridModel.swift; sourceTree = "<group>"; };
 		F4D31C991F84E2CD004437FD /* PrimitiveScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimitiveScene.swift; sourceTree = "<group>"; };
 		F4D31C9B1F85E7A4004437FD /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		F4D31C9D1F8A594D004437FD /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				F4D31C751F84DB52004437FD /* AppDelegate.swift */,
 				F4D31C771F84DB52004437FD /* art.scnassets */,
 				F4D31C791F84DB52004437FD /* ViewController.swift */,
+				F4D31C9D1F8A594D004437FD /* Plane.swift */,
 				F4D31C991F84E2CD004437FD /* PrimitiveScene.swift */,
 				F4D31C9B1F85E7A4004437FD /* Grid.swift */,
 				F4D31C7B1F84DB52004437FD /* Main.storyboard */,
@@ -216,6 +219,7 @@
 				F4D31C761F84DB52004437FD /* AppDelegate.swift in Sources */,
 				F4D31C9A1F84E2CD004437FD /* PrimitiveScene.swift in Sources */,
 				F4D31C9C1F85E7A4004437FD /* Grid.swift in Sources */,
+				F4D31C9E1F8A594D004437FD /* Plane.swift in Sources */,
 				F4D31C981F84DB6A004437FD /* GridModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
+    var planes: [UUID: Plane] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,29 +110,18 @@ extension ViewController: SCNPhysicsContactDelegate {
 extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-        let width = CGFloat(planeAnchor.extent.x)
-        let length = CGFloat(planeAnchor.extent.z)
-        let height = CGFloat(0.01)
-        let plane = SCNBox(width: width, height: height, length: length, chamferRadius: 0)
-        let planeNode = SCNNode(geometry: plane)
         
-        planeNode.position = SCNVector3(x: 0, y: -Float(height) / 2, z: 0)
-        planeNode.opacity = 0.25
-        planeNode.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: plane, options: nil))
-        
-        node.addChildNode(planeNode)
+        let plane = Plane(withPlaneAnchor: planeAnchor)
+        planes[planeAnchor.identifier] = plane
+        node.addChildNode(plane)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor,
-            let planeNode = node.childNodes.first,
-            let plane = planeNode.geometry as? SCNBox
+            let plane = planes[planeAnchor.identifier]
             else { return }
         
-        plane.width = CGFloat(planeAnchor.extent.x)
-        plane.length = CGFloat(planeAnchor.extent.z)
-        planeNode.position = SCNVector3(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
-        planeNode.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: plane, options: nil))
+        plane.update(withPlaneAnchor: planeAnchor)
     }
 }
 
