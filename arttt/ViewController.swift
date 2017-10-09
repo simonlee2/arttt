@@ -22,6 +22,34 @@ class ViewController: UIViewController {
     @IBOutlet var sceneView: ARSCNView!
     var planes: [UUID: Plane] = [:]
     
+    var currentTrackingState: ARCamera.TrackingState? {
+        didSet {
+            
+            switch (oldValue, currentTrackingState) {
+            case (.notAvailable?, .notAvailable?),
+                 (.normal?, .normal?),
+                 (.limited?, .limited?),
+                 (_, .none):
+                break
+            case (_, .notAvailable?):
+                print("AR Camera tracking is not available")
+            case (_, .limited(let reason)?):
+                switch reason {
+                case .initializing:
+                    print("AR camera is initializing")
+                case .excessiveMotion:
+                    print("AR camera is experiencing excessive motion")
+                case .insufficientFeatures:
+                    print("There are insufficient features for the AR camera to track properly")
+                }
+            case (_, .normal?):
+                print("AR camera is all good")
+            }
+        }
+    }
+    
+    var currentTrackingStateReason: __ARTrackingStateReason = .none
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -133,6 +161,10 @@ extension ViewController: ARSCNViewDelegate {
 }
 
 extension ViewController: ARSessionObserver {
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        currentTrackingState = camera.trackingState
+    }
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
