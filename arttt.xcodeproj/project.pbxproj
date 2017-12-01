@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4AE38241F8B1AFB00169A99 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE38231F8B1AFB00169A99 /* StatusView.swift */; };
 		F4D31C761F84DB52004437FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D31C751F84DB52004437FD /* AppDelegate.swift */; };
 		F4D31C781F84DB52004437FD /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D31C771F84DB52004437FD /* art.scnassets */; };
 		F4D31C7A1F84DB52004437FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D31C791F84DB52004437FD /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4AE38231F8B1AFB00169A99 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		F4D31C721F84DB52004437FD /* arttt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arttt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D31C751F84DB52004437FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4D31C771F84DB52004437FD /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F4D31C991F84E2CD004437FD /* PrimitiveScene.swift */,
 				F4D31C9B1F85E7A4004437FD /* Grid.swift */,
 				F4D31C7B1F84DB52004437FD /* Main.storyboard */,
+				F4AE38231F8B1AFB00169A99 /* StatusView.swift */,
 				F4D31C7E1F84DB52004437FD /* Assets.xcassets */,
 				F4D31C801F84DB52004437FD /* LaunchScreen.storyboard */,
 				F4D31C831F84DB52004437FD /* Info.plist */,
@@ -219,6 +222,7 @@
 				F4D31C761F84DB52004437FD /* AppDelegate.swift in Sources */,
 				F4D31C9A1F84E2CD004437FD /* PrimitiveScene.swift in Sources */,
 				F4D31C9C1F85E7A4004437FD /* Grid.swift in Sources */,
+				F4AE38241F8B1AFB00169A99 /* StatusView.swift in Sources */,
 				F4D31C9E1F8A594D004437FD /* Plane.swift in Sources */,
 				F4D31C981F84DB6A004437FD /* GridModel.swift in Sources */,
 			);

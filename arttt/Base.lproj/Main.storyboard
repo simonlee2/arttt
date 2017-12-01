@@ -1,27 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Q0-pv-rTe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CourierNew.ttf">
+            <string>CourierNewPSMT</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--ViewController-->
+        <scene sceneID="yPs-Rz-Qy5">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController title="ViewController" id="8Q0-pv-rTe" customClass="ViewController" customModule="arttt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Rl-hY-I7m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ij4-S8-dJ3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcc-eK-XnG" customClass="StatusView" customModule="arttt" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="335" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BrX-YD-UNE">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-1J-OXl">
+                                            <rect key="frame" x="4" y="4" width="327" height="36"/>
+                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="sFX-1J-OXl" secondAttribute="trailing" constant="4" id="4LE-pG-r9S"/>
+                                        <constraint firstItem="sFX-1J-OXl" firstAttribute="leading" secondItem="BrX-YD-UNE" secondAttribute="leading" constant="4" id="mGU-PQ-hzU"/>
+                                        <constraint firstAttribute="bottom" secondItem="sFX-1J-OXl" secondAttribute="bottom" constant="4" id="oOI-t8-L2v"/>
+                                        <constraint firstItem="sFX-1J-OXl" firstAttribute="top" secondItem="BrX-YD-UNE" secondAttribute="top" constant="4" id="qe9-od-tlH"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MDa-Tl-4hF"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r80-lD-9bW" firstAttribute="bottom" secondItem="Ij4-S8-dJ3" secondAttribute="bottom" id="0CX-cm-hfc"/>
+                            <constraint firstItem="r80-lD-9bW" firstAttribute="trailing" secondItem="qcc-eK-XnG" secondAttribute="trailing" constant="20" id="Ezf-TU-Nm1"/>
+                            <constraint firstItem="Ij4-S8-dJ3" firstAttribute="top" secondItem="r80-lD-9bW" secondAttribute="top" id="JIR-tD-oy4"/>
+                            <constraint firstItem="qcc-eK-XnG" firstAttribute="leading" secondItem="r80-lD-9bW" secondAttribute="leading" constant="20" id="Lz5-0i-Kpv"/>
+                            <constraint firstItem="r80-lD-9bW" firstAttribute="trailing" secondItem="Ij4-S8-dJ3" secondAttribute="trailing" id="Wa5-qq-yzt"/>
+                            <constraint firstItem="qcc-eK-XnG" firstAttribute="top" secondItem="r80-lD-9bW" secondAttribute="top" constant="20" id="lsS-g1-eQA"/>
+                            <constraint firstItem="Ij4-S8-dJ3" firstAttribute="leading" secondItem="r80-lD-9bW" secondAttribute="leading" id="n05-vz-NEN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r80-lD-9bW"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneView" destination="Ij4-S8-dJ3" id="2lE-ub-y2v"/>
+                        <outlet property="statusView" destination="qcc-eK-XnG" id="fiq-lp-Pww"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptp-iB-8zE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="95" y="110"/>
         </scene>
     </scenes>
 </document>

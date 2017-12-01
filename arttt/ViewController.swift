@@ -19,31 +19,31 @@ struct CollisionCategory: OptionSet {
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var statusView: StatusView!
     @IBOutlet var sceneView: ARSCNView!
     var planes: [UUID: Plane] = [:]
     
     var currentTrackingState: ARCamera.TrackingState? {
         didSet {
-            
+            print(oldValue, currentTrackingState)
             switch (oldValue, currentTrackingState) {
             case (.notAvailable?, .notAvailable?),
                  (.normal?, .normal?),
-                 (.limited?, .limited?),
                  (_, .none):
                 break
             case (_, .notAvailable?):
-                print("AR Camera tracking is not available")
+                statusView.queueStatus("AR Camera tracking is not available")
             case (_, .limited(let reason)?):
                 switch reason {
                 case .initializing:
-                    print("AR camera is initializing")
+                    statusView.queueStatus("AR camera is initializing")
                 case .excessiveMotion:
-                    print("AR camera is experiencing excessive motion")
+                    statusView.queueStatus("AR camera is experiencing excessive motion")
                 case .insufficientFeatures:
-                    print("There are insufficient features for the AR camera to track properly")
+                    statusView.queueStatus("There are insufficient features for the AR camera to track properly")
                 }
             case (_, .normal?):
-                print("AR camera is all good")
+                statusView.queueStatus("AR camera is all good")
             }
         }
     }
